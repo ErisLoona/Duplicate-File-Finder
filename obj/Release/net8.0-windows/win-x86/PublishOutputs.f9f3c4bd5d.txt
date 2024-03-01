@@ -1,0 +1,7 @@
+C:\Users\rares\Downloads\Dupe Finder.pdb
+C:\Users\rares\Downloads\D3DCompiler_47_cor3.dll
+C:\Users\rares\Downloads\PenImc_cor3.dll
+C:\Users\rares\Downloads\PresentationNative_cor3.dll
+C:\Users\rares\Downloads\vcruntime140_cor3.dll
+C:\Users\rares\Downloads\wpfgfx_cor3.dll
+C:\Users\rares\Downloads\Dupe Finder.exe

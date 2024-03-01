@@ -1,0 +1,7 @@
+C:\Users\rares\Documents\Misc Programs\Programming\Dupe Finder\Publish\Dupe Finder.pdb
+C:\Users\rares\Documents\Misc Programs\Programming\Dupe Finder\Publish\D3DCompiler_47_cor3.dll
+C:\Users\rares\Documents\Misc Programs\Programming\Dupe Finder\Publish\PenImc_cor3.dll
+C:\Users\rares\Documents\Misc Programs\Programming\Dupe Finder\Publish\PresentationNative_cor3.dll
+C:\Users\rares\Documents\Misc Programs\Programming\Dupe Finder\Publish\vcruntime140_cor3.dll
+C:\Users\rares\Documents\Misc Programs\Programming\Dupe Finder\Publish\wpfgfx_cor3.dll
+C:\Users\rares\Documents\Misc Programs\Programming\Dupe Finder\Publish\Dupe Finder.exe

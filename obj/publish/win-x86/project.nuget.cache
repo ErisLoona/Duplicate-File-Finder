@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "uoW6k71y7XMAk2XYo6CJpvY4XZrdpRko/uPmK0pErme/rAg2lFZrRI02gu0+02AkrMZuFKYv13S9Hc+P7Q+zBA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rares\\Documents\\Misc Programs\\Programming\\Dupe Finder\\Dupe Finder.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rares\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.2\\microsoft.net.illink.tasks.8.0.2.nupkg.sha512",
+    "C:\\Users\\rares\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.2\\microsoft.netcore.app.runtime.win-x86.8.0.2.nupkg.sha512",
+    "C:\\Users\\rares\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.2\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.2.nupkg.sha512",
+    "C:\\Users\\rares\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.2\\microsoft.aspnetcore.app.runtime.win-x86.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
