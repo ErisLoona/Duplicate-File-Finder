@@ -43,7 +43,7 @@ namespace Dupe_Finder
                     {
                         if (selectedPaths[step].Length > selectedPaths[i].Length)
                         {
-                            if (selectedPaths[step].Contains(selectedPaths[i]))
+                            if (selectedPaths[step].Contains(selectedPaths[i]) && selectedPaths[step].Count(bs => bs == '\\') > selectedPaths[i].Count(bs => bs == '\\'))
                             {
                                 isupmost = false;
                                 selectedPaths.RemoveAt(step);
@@ -52,7 +52,7 @@ namespace Dupe_Finder
                         }
                         else
                         {
-                            if (selectedPaths[i].Contains(selectedPaths[step]))
+                            if (selectedPaths[i].Contains(selectedPaths[step]) && selectedPaths[step].Count(bs => bs == '\\') < selectedPaths[i].Count(bs => bs == '\\'))
                             {
                                 isupmost = false;
                                 selectedPaths.RemoveAt(i);
@@ -251,13 +251,7 @@ namespace Dupe_Finder
             statusLabel.Enabled = true;
             statusLabel.Text = "Deleting files...";
             statusLabel.Visible = true;
-            foreach (FoundFiles file in foundFile)
-                foreach (Duplicate dupe in file.Duplicates)
-                    if (dupe.Selected == false)
-                        Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(dupe.Path!, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
-            MessageBox.Show("Done!", "Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            warn = false;
-            cancelButton_Click(sender, EventArgs.Empty);
+            thread2.RunWorkerAsync(argument: false);
         }
 
         private void delSelected_Click(object sender, EventArgs e)
@@ -267,10 +261,22 @@ namespace Dupe_Finder
             statusLabel.Enabled = true;
             statusLabel.Text = "Deleting files...";
             statusLabel.Visible = true;
-            foreach (FoundFiles file in foundFile)
+            thread2.RunWorkerAsync(argument: true);
+        }
+
+        private void thread2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            bool selected = (bool)e.Argument!;
+            Parallel.ForEach(foundFile, (file) =>
+            {
                 foreach (Duplicate dupe in file.Duplicates)
-                    if (dupe.Selected == true)
+                    if (dupe.Selected == selected)
                         Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(dupe.Path!, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
+            });
+        }
+
+        private void thread2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
             MessageBox.Show("Done!", "Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
             warn = false;
             cancelButton_Click(sender, EventArgs.Empty);

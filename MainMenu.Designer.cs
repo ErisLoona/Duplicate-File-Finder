@@ -51,6 +51,7 @@
             countedLabel = new Label();
             dupesLabel = new Label();
             thread1 = new System.ComponentModel.BackgroundWorker();
+            thread2 = new System.ComponentModel.BackgroundWorker();
             locationDelete.SuspendLayout();
             dupeOpen.SuspendLayout();
             SuspendLayout();
@@ -282,6 +283,11 @@
             thread1.DoWork += thread1_DoWork;
             thread1.RunWorkerCompleted += thread1_RunWorkerCompleted;
             // 
+            // thread2
+            // 
+            thread2.DoWork += thread2_DoWork;
+            thread2.RunWorkerCompleted += thread2_RunWorkerCompleted;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -342,5 +348,6 @@
         private Label countedLabel;
         private Label dupesLabel;
         private System.ComponentModel.BackgroundWorker thread1;
+        private System.ComponentModel.BackgroundWorker thread2;
     }
 }
